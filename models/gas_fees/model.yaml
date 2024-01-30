@@ -22,8 +22,8 @@ training:
 inferencing:
   sql: |
     SELECT
-      number as "ts"
-      CAST(base_fee_per_gas / 1000000000.0 AS DOUBLE) as "y"
+      number as "ts",
+      CAST(base_fee_per_gas / 1000000000.0 AS DOUBLE) as "y",
       CAST(transaction_count AS DOUBLE) as "y2"
     FROM eth.recent_blocks
     WHERE base_fee_per_gas IS NOT NULL
